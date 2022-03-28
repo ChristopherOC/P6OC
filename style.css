@@ -1,0 +1,68 @@
+/* On travaille sur la balise body, donc sur TOUTE la page */
+body
+{
+    margin: 0 auto;
+    background-color: white;
+    color: black;
+}
+
+/* Travail sur la partie header */
+header{
+    background-color: grey;
+    background-size: cover;
+    display: flex;
+    padding: 20px;
+    align-items: center;
+}
+
+header img {
+  width: 30%;
+  /* filter: invert(100%); */
+}
+
+/* Menu de navigation */
+.nav__items{
+    display: flex;
+    list-style: None;
+    width: 400px;
+    margin-left: 50px;
+    justify-content: space-between;
+}
+
+.nav__to{
+    font-size: large;
+    text-transform: uppercase;
+    color: black;
+}
+
+/* Liste des films */
+section.best-movie{
+    border: 5px black solid;
+    margin-top: 25px;
+    height: 100px;
+}
+
+section.best-rating{
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.conteneur{
+    display: flex;
+    /* width: 400px; */
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+}
+.element{
+    border: 2px black solid;
+    background-color: lightgrey;
+    margin: 5px;
+    width: 150px;
+    height: 150px;
+}
+
+section.cat-titles{
+    text-align: center;
+}
