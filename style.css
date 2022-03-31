@@ -40,9 +40,10 @@ section.best-movie{
     border: 5px black solid;
     margin-top: 25px;
     height: 100px;
+    
 }
 
-section.best-rating{
+section.carousel{
     margin-top: 25px;
     display: flex;
     flex-direction: column;
