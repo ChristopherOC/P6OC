@@ -16,7 +16,7 @@ header{
 }
 
 header img {
-  width: 30%;
+  width: 50%;
   /* filter: invert(100%); */
 }
 
@@ -43,6 +43,12 @@ section.best-movie{
     
 }
 
+.best-movie img{
+    background-color: blue;
+    display: flex;
+    align-items: center;
+}
+
 section.carousel{
     margin-top: 25px;
     display: flex;
@@ -57,13 +63,25 @@ section.carousel{
     margin: 10px;
 }
 .element{
-    border: 2px black solid;
+    border: 1px black solid;
     background-color: lightgrey;
     margin: 5px;
     width: 150px;
     height: 150px;
 }
 
-section.cat-titles{
+.carousel-items{
+    overflow: hidden;
+    display: inline-block;
     text-align: center;
+    display: flex;
+    z-index: 1;
+}
+
+.hidden{
+    display: none;
+}
+.carousel-items img:hover{
+    transform: scale(1.1);
+    z-index: 5;
 }
