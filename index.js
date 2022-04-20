@@ -35,19 +35,67 @@ const urlRomance = "http://localhost:8000/api/v1/titles/?genre=Romance&sort_by=v
  }
 
 function loadCarousel(category, movies_data){
-console.log(category)
+// console.log(category)
    let movies_images = document.getElementsByClassName(category)[0].children
-   console.log(movies_images)
+//    console.log(movies_images)
     
     movies_data.forEach((movie_data, index)=>{
         let movie_image = movies_images[index]
         movie_image.src= movie_data.image_url
     })
 
+}
 
+// const items = document.querySelectorAll('img')
+// const nbSlide = items.length
+// const suivant = document.querySelector('.next')
+// const precedent = document.querySelector('.prev')
+
+function previous(category){
+    let movies_images = [...document.getElementsByClassName(category)[0].children]
+    console.log(movies_images)
+    let movie_image = movies_images.pop()
+    movies_images.unshift(movie_image)
+    console.log(movies_images)
+    // update_carousel(category)
 
 }
 
+function update_carousel(category){
+    let movies_images = [...document.getElementsByClassName(category)[0].children]
+    movies_images.forEach((element, index)=>{
+        if( index <= 4){
+            element.style.display = 'block'
+        }else{
+            element.style.display = 'none'
+        }
+    })
+}
+
+// let count = 0
+// function slideSuivante(){
+//     items[count].classList.remove('active')
+//     if(count< nbSlide -1){
+//         count++
+//     }else{
+//         count = 0
+//     }
+//     items[count].classList.add('active')
+//     console.log(count)
+// }
+// suivant.addEventListener('click',slideSuivante)
+
+// function slidePrecedent(){
+//     items[count].classList.remove('active')
+//     if(items[count]>0){
+//         count--
+//     } else{
+//         count = nbSlide -1
+//     }
+//     items[count].classList.add('active')
+//     console.log(count)
+// }
+// precedent.addEventListener('click', slidePrecedent)
 
 window.addEventListener("DOMContentLoaded", main);
     

@@ -44,9 +44,9 @@ section.best-movie{
 }
 
 .best-movie img{
-    background-color: blue;
+    background-color: green;
     display: flex;
-    align-items: center;
+    margin-left: 50%;
 }
 
 section.carousel{
@@ -78,10 +78,34 @@ section.carousel{
     z-index: 1;
 }
 
+/* .carousel img{
+    display: none;
+}
+img.active{
+    display: flex; */
+/* } */
+
 .hidden{
     display: none;
 }
 .carousel-items img:hover{
     transform: scale(1.1);
     z-index: 5;
+}
+
+
+.carousel-button{
+    position: absolute;
+    opacity: 2;
+    background-color: white;
+    cursor: pointer;
+    border: none;
+}
+
+.carousel-button:hover,
+.carousel-button:focus{
+    color: white;
+    background-color: rgba(0, 0, 0, .3);
+    outline: 1px solid black;
+    transform: scale(1.5);
 }
