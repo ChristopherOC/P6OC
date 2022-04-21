@@ -72,6 +72,17 @@ function update_carousel(category){
     })
 }
 
+//Modal window triggering
+const modalContainer= document.querySelector(".modal-container")
+const modaltriggers = document.querySelectorAll(".modal-trigger")
+
+modaltriggers.forEach(trigger => trigger.addEventListener("click", toggleModal))
+
+function toggleModal(){
+    modalContainer.classList.toggle("active")
+}
+
+
 // let count = 0
 // function slideSuivante(){
 //     items[count].classList.remove('active')
