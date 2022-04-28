@@ -86,7 +86,7 @@ img.active{
 /* } */
 
 .hidden{
-    display: none;
+    /* display: none; */
 }
 .carousel-items img:hover{
     transform: scale(1.1);

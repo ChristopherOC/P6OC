@@ -34,7 +34,7 @@
     <section class="carousel">   
         <h3>Film les mieux notés :</h3>
         <div class="conteneur">
-            <div>	
+            <div onclick="previous('BestMovies')">	
                 <button class="carousel-button prev">&#9664;</button>
             </div>
             <div class= "BestMovies carousel-items">
@@ -46,7 +46,7 @@
                 <img src="" class="element hidden">
                 <img src="" class="element hidden">
             </div>
-            <div>	
+            <div onclick="next('BestMovies')">	
                 <button class="carousel-button next">&#9654;</button>
             </div>
         </div>
@@ -67,7 +67,7 @@
                 <img src="" class="element hidden">
                 <img src="" class="element hidden">
             </div>
-            <div onclick="next('action')">	
+            <div onclick="next('ActionMovies')">	
                 <button class="carousel-button next">&#9654;</button>
             </div>
         </div>
@@ -76,7 +76,7 @@
     <section class="carousel">
         <h4>Sci-Fi :</h4>
         <div class="conteneur">
-            <div onclick="previous('action')">	
+            <div onclick="previous('SciFiMovies')">	
                 <button class="carousel-button prev">&#9664;</button>
             </div>
             <div class= "SciFiMovies carousel-items">
@@ -88,7 +88,7 @@
                 <img src="" class="element hidden">
                 <img src="" class="element hidden">
             </div>
-            <div onclick="next('action')">	
+            <div onclick="next('SciFiMovies')">	
                 <button class="carousel-button next">&#9654;</button>
             </div>
         </div>
@@ -99,7 +99,7 @@
     <section class="carousel">
         <h4>Romance :</h4>
         <div class="conteneur">
-            <div onclick="previous('action')">	
+            <div onclick="previous('RomanceMovies')">	
                 <button class="carousel-button prev">&#9664;</button>
             </div>
             <div class= "RomanceMovies carousel-items">
@@ -111,7 +111,7 @@
                 <img src="" class="element hidden">
                 <img src="" class="element hidden">
             </div>
-            <div onclick="next('action')">	
+            <div onclick="next('RomanceMovies')">	
                 <button class="carousel-button next">&#9654;</button>
             </div>
         </div>
@@ -123,9 +123,17 @@
             <button class="close-modal modal-trigger">X</button>
             <h1>test</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore ipsum quaerat molestias magni alias optio veritatis ipsam fugit facilis </p>
+            <div class="Modal_body">
+                <div class="title"></div>
+                <div class="genres"></div>
+                <div class="year"></div>
+                <div class="imbd_score"></div>
+                <div class="actors"></div>
+            </div>
         </div>
     </div>
 
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
      <script src="index.js"></script>
 </body>
 

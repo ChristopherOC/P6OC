@@ -42,35 +42,48 @@ function loadCarousel(category, movies_data){
     movies_data.forEach((movie_data, index)=>{
         let movie_image = movies_images[index]
         movie_image.src= movie_data.image_url
+        movie_image.onclick= function(){
+            console.log(movie_data.id)
+        }
+        // let modal_data = modals_data[index]
+        // modal_data = movie_data.title
     })
 
 }
 
-// const items = document.querySelectorAll('img')
-// const nbSlide = items.length
-// const suivant = document.querySelector('.next')
-// const precedent = document.querySelector('.prev')
-
 function previous(category){
-    let movies_images = [...document.getElementsByClassName(category)[0].children]
+    let movies_images = $("." + category).first().children()
     console.log(movies_images)
-    let movie_image = movies_images.pop()
-    movies_images.unshift(movie_image)
-    console.log(movies_images)
+    let last_movie = movies_images.last()
+    movies_images.remove(last_movie)
+    movies_images.prepend(last_movie)
+    // console.log(movies_images)
     // update_carousel(category)
-
 }
+
+function next(category){
+    let movies_images = [...document.getElementsByClassName(category)[0].children]
+    // console.log(movies_images)
+    let movie_image = movies_images.shift()
+    movies_images.push(movie_image)
+    // console.log(movies_images)
+    // update_carousel(category)
+}
+
 
 function update_carousel(category){
     let movies_images = [...document.getElementsByClassName(category)[0].children]
     movies_images.forEach((element, index)=>{
         if( index <= 4){
             element.style.display = 'block'
+            // element.classList.add(".modal-trigger")
         }else{
             element.style.display = 'none'
         }
     })
 }
+
+
 
 //Modal window triggering
 const modalContainer= document.querySelector(".modal-container")
@@ -80,33 +93,9 @@ modaltriggers.forEach(trigger => trigger.addEventListener("click", toggleModal))
 
 function toggleModal(){
     modalContainer.classList.toggle("active")
+    // document.getElementById("movie__title")
 }
 
-
-// let count = 0
-// function slideSuivante(){
-//     items[count].classList.remove('active')
-//     if(count< nbSlide -1){
-//         count++
-//     }else{
-//         count = 0
-//     }
-//     items[count].classList.add('active')
-//     console.log(count)
-// }
-// suivant.addEventListener('click',slideSuivante)
-
-// function slidePrecedent(){
-//     items[count].classList.remove('active')
-//     if(items[count]>0){
-//         count--
-//     } else{
-//         count = nbSlide -1
-//     }
-//     items[count].classList.add('active')
-//     console.log(count)
-// }
-// precedent.addEventListener('click', slidePrecedent)
 
 window.addEventListener("DOMContentLoaded", main);
     
