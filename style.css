@@ -36,14 +36,14 @@ header img {
 }
 
 /* Liste des films */
-section.best-movie{
+section.BestMovie{
     border: 5px black solid;
     margin-top: 25px;
     height: 100px;
     
 }
 
-.best-movie img{
+.BestMovie img{
     background-color: green;
     display: flex;
     margin-left: 50%;
@@ -85,9 +85,9 @@ img.active{
     display: flex; */
 /* } */
 
-.hidden{
-    /* display: none; */
-}
+/* .hidden{
+    display: none;
+} */
 .carousel-items img:hover{
     transform: scale(1.1);
     /* z-index: 5; */

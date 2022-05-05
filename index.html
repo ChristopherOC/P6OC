@@ -20,15 +20,15 @@
         </div>
     </header>
     
-    
-    <section class="best-movie">
-        <h2>Meilleur film</h2>
-        <div class="conteneur">
-            <img src="" class="element">
-        </div>
-        
-        
-           
+    <section class="carousel">
+        <section class="BestMovie">
+            <h2>Meilleur film</h2>
+            <div class="conteneur">
+                <div class="carousel-items"></div>
+                    <img src="" class="element">
+                </div>
+            </div>     
+        </section>
     </section>
 
     <section class="carousel">   
@@ -38,8 +38,8 @@
                 <button class="carousel-button prev">&#9664;</button>
             </div>
             <div class= "BestMovies carousel-items">
-                <img src="" class="element modal-trigger">
-                <img src="" class="element ">
+                <img src="" class="element">
+                <img src="" class="element">
                 <img src="" class="element ">
                 <img src="" class="element ">
                 <img src="" class="element hidden">
@@ -59,13 +59,13 @@
                 <button class="carousel-button prev">&#9664;</button>
             </div>
             <div class= "ActionMovies carousel-items">
-                <img src="" class="element">
-                <img src="" class="element">
-                <img src="" class="element">
-                <img src="" class="element">
-                <img src="" class="element hidden">
-                <img src="" class="element hidden">
-                <img src="" class="element hidden">
+                <img src="" class="element modal-trigger">
+                <img src="" class="element modal-trigger">
+                <img src="" class="element modal-trigger">
+                <img src="" class="element modal-trigger">
+                <img src="" class="element modal-trigger">
+                <img src="" class="element modal-trigger">
+                <img src="" class="element modal-trigger">
             </div>
             <div onclick="next('ActionMovies')">	
                 <button class="carousel-button next">&#9654;</button>
@@ -80,13 +80,13 @@
                 <button class="carousel-button prev">&#9664;</button>
             </div>
             <div class= "SciFiMovies carousel-items">
-                <img src="" class="element">
-                <img src="" class="element">
-                <img src="" class="element">
-                <img src="" class="element">
-                <img src="" class="element hidden">
-                <img src="" class="element hidden">
-                <img src="" class="element hidden">
+                <img src="" class="element modal-trigger">
+                <img src="" class="element modal-trigger">
+                <img src="" class="element modal-trigger">
+                <img src="" class="element modal-trigger">
+                <img src="" class="element modal-trigger hidden">
+                <img src="" class="element modal-trigger hidden">
+                <img src="" class="element modal-trigger hidden">
             </div>
             <div onclick="next('SciFiMovies')">	
                 <button class="carousel-button next">&#9654;</button>
@@ -103,13 +103,13 @@
                 <button class="carousel-button prev">&#9664;</button>
             </div>
             <div class= "RomanceMovies carousel-items">
-                <img src="" class="element">
-                <img src="" class="element">
-                <img src="" class="element">
-                <img src="" class="element">
-                <img src="" class="element hidden">
-                <img src="" class="element hidden">
-                <img src="" class="element hidden">
+                <img src="" class="element modal-trigger">
+                <img src="" class="element modal-trigger">
+                <img src="" class="element modal-trigger">
+                <img src="" class="element modal-trigger">
+                <img src="" class="element modal-trigger hidden">
+                <img src="" class="element modal-trigger hidden">
+                <img src="" class="element modal-trigger hidden">
             </div>
             <div onclick="next('RomanceMovies')">	
                 <button class="carousel-button next">&#9654;</button>
@@ -120,11 +120,11 @@
     <div class="modal-container">
         <div class="overlay modal-trigger"></div>
         <div class="modal">
-            <button class="close-modal modal-trigger">X</button>
-            <h1>test</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore ipsum quaerat molestias magni alias optio veritatis ipsam fugit facilis </p>
+            <button class="close-modal modal-trigger" onclick="toggleModal()">X</button>
+            <h1 id="title"></h1>
+            <p id="title"></p>
             <div class="Modal_body">
-                <div class="title"></div>
+                
                 <div class="genres"></div>
                 <div class="year"></div>
                 <div class="imbd_score"></div>
