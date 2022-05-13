@@ -18,6 +18,16 @@ const urlRomance = "http://localhost:8000/api/v1/titles/?genre=Romance&sort_by=v
         console.log(err);
     }
 };
+async function get_one(url) {
+    try {
+        const response = await fetch(url);
+        const json = await response.json();
+        return json;
+    } catch (err) {
+        console.log(err);
+    }
+};
+
 
  async function main(){
     //  const BestMovie = await get(urlBestMovie)
@@ -44,34 +54,52 @@ function loadCarousel(category, movies_data){
     
     movies_data.forEach((movie_data, index)=>{
         let movie_image = movies_images[index]
-        movie_image.src= movie_data.image_url
-        movie_image.onclick= function(){
-            toggleModal(movie_data.id)
-            console.log(movie_data.id)
-            console.log(movie_data.url)
-            console.log(movie_data.title)
-            console.log(movie_data.imdb_score)
+        movie_image.src = movie_data.image_url
+        movie_image.onclick= async function(){
+            await toggleModal(movie_data.id)
+            // console.log(movie_data)
+            // const modalTitle = document.querySelector('.modal-title')
+            // modalTitle.innerHTML = "Titre : " + movie_data.title
+
+            // const modalDirectors = document.querySelector('.modal-directors')
+            // modalDirectors.innerHTML = "Directeurs : " + movie_data.directors
+            
+            // const modalActors = document.querySelector('.modal-actors')
+            // modalActors.innerHTML = "Acteurs : " + movie_data.actors
+
+            // const modalScore = document.querySelector('.imbd_score')
+            // modalScore.innerHTML = "Score IMBD : " + movie_data.imdb_score
+
+            // const modalYear = document.querySelector('modal-year')
+            // modalYear.innerHTML = "Date de sortie : " + movie_data.year
+
+            // const modalGenres = document.querySelector('modal-genres')
+            // modalGenres.innerHTML = "Genre(s) : " + movie_data.genres
+
+            
+
+            // console.log("aaaaaaaa" + movie_data.genres)
+            // console.log("aaaaaaaaaaaaaaaa" + movie_data.year)
+            // console.log(movie_data.genre)
+            // console.log(movie_data.id)
+            // console.log(movie_data.url)
+            // console.log(movie_data.title)
+            // console.log(movie_data.imdb_score)
         }
     })
 
 }
 
-function previous(category){
-    movies_images = document.querySelector("." + category)
-    movies_images.shift()
-    console.log(movies_images.children)
-
-    // console.log(movies_images)
-    // update_carousel(category)
+function previous(category) {
+    let content = document.querySelector(".category");#fixe ici
+    content.prepend(content.children.item(content.children.length - 1));
+    update_carousel();
 }
 
-function next(category){
-    let movies_images = [...document.getElementsByClassName(category)[0].children]
-    // console.log(movies_images)
-    let movie_image = movies_images.shift()
-    movies_images.push(movie_image)
-    // console.log(movies_images)
-    // update_carousel(category)
+function next(category) {
+    let content = document.querySelector(".category");
+    content.append(content.children.item(0));
+    update_carousel();
 }
 
 
@@ -95,10 +123,32 @@ const modaltriggers = document.querySelectorAll(".modal-trigger")
 
 // modaltriggers.forEach(trigger => trigger.addEventListener("click", toggleModal()))
 
-function toggleModal(){
+async function toggleModal(id){
     modalContainer.classList.toggle("active")
+    console.log(id)
+    const modalRequestUrl =  "http://localhost:8000/api/v1/titles/" + id
+    
+    const movie_data = await get_one (modalRequestUrl)
+        console.log(movie_data)
+    
+    const modalTitle = document.querySelector('.modal-title')
+            modalTitle.innerHTML = "Titre : " + movie_data.title
 
-    // document.getElementById("title").innerText = movie_data.title
+            const modalDirectors = document.querySelector('.modal-directors')
+            modalDirectors.innerHTML = "Directeurs : " + movie_data.directors
+            
+            const modalActors = document.querySelector('.modal-actors')
+            modalActors.innerHTML = "Acteurs : " + movie_data.actors
+
+            const modalScore = document.querySelector('.imbd_score')
+            modalScore.innerHTML = "Score IMBD : " + movie_data.imdb_score
+
+            const modalYear = document.querySelector('.modal-year')
+            modalYear.innerHTML = "Date de sortie : " + movie_data.year
+
+            const modalGenres = document.querySelector('.modal-genres')
+            modalGenres.innerHTML = "Genre(s) : " + movie_data.genre
+
 }
 
 window.addEventListener("DOMContentLoaded", main);
