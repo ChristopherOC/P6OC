@@ -2,7 +2,7 @@
 body
 {
     margin: 0 auto;
-    background-color: white;
+    background-color: rgba(100, 91, 91, 0.199);
     color: black;
 }
 
@@ -17,7 +17,6 @@ header{
 
 header img {
   width: 50%;
-  /* filter: invert(100%); */
 }
 
 /* Menu de navigation */
@@ -36,6 +35,13 @@ header img {
 }
 
 /* Liste des films */
+h4{
+    text-transform: uppercase;
+    
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+
+}
 section.BestMovie{
     border: 5px black solid;
     margin-top: 25px;
@@ -46,7 +52,7 @@ section.BestMovie{
 .BestMovie img{
     background-color: green;
     display: flex;
-    margin-left: 50%;
+    align-self: center;
 }
 
 section.carousel{
@@ -54,20 +60,23 @@ section.carousel{
     display: flex;
     flex-direction: column;
     text-align: center;
+    
 }
 .conteneur{
+    align-self: center;
     display: flex;
-    /* width: 400px; */
+    width: auto;
     justify-content: space-between;
     align-items: center;
     margin: 10px;
+    /* background-color: aqua; */
 }
 .element{
-    border: 1px black solid;
+    border: 2px black solid;
     background-color: lightgrey;
     margin: 5px;
-    width: 150px;
-    height: 150px;
+    width: 25%;
+    height: 25%;
 }
 
 .carousel-items{
@@ -75,31 +84,26 @@ section.carousel{
     display: inline-block;
     text-align: center;
     display: flex;
-    /* z-index: 1; */
 }
-
-/* .carousel img{
-    display: none;
-}
-img.active{
-    display: flex; */
-/* } */
 
 .hidden{
     display: none;
 }
 .carousel-items img:hover{
-    transform: scale(1.1);
-    /* z-index: 5; */
+    transform: scale(1.04);
 }
 
 
 .carousel-button{
-    position: absolute;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    padding: 10px;
     opacity: 2;
-    background-color: white;
     cursor: pointer;
     border: none;
+    background-color: rgba(100, 91, 91, 0.199);
+    height: 250px;
 }
 
 .carousel-button:hover,
@@ -107,7 +111,7 @@ img.active{
     color: white;
     background-color: rgba(0, 0, 0, .3);
     outline: 1px solid black;
-    transform: scale(1.5);
+    transform: scale(1.1);
 }
 
 .modal-container{
