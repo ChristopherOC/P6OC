@@ -1,4 +1,4 @@
-#titre JustStreamIt  
+#title JustStreamIt  
 JustStreamIt est ue interface en ligne de streaming de films.  
 
 Pour pouvoir utiliser l'interface voici les pré-requis :  
