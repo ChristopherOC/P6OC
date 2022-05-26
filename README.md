@@ -1,4 +1,4 @@
-#JustStreamIt   
+# JustStreamIt   
 
 JustStreamIt est une interface en ligne de disposant d'une sélection de films divers. Ceci sont consultables dans des carousels selon les catégories. De plus, des informations complémentaires peuvent être affichés lorsque l'utitlisateur clique sur le film voulu.
 
